@@ -24,11 +24,7 @@ const recordSchema = mongoose.Schema({
     required: true
   },
   date: {
-    type: String,
-    required: true
-  },
-  hour: {
-    type: String,
+    type: Date,
     required: true
   },
   TDI: {
@@ -37,7 +33,7 @@ const recordSchema = mongoose.Schema({
   },
   cause: {
     type: String,
-    required: true
+    required: false
   },
   size: {
     type: String,

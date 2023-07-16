@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='wrapper'>
+        <form action='' class='form'>
+
+          <p class='field required half'>
+            <label class='label required' for='name'>Nombre</label>
+            <input class='text-input' id='name' name='name' required type='text'>
+          </p>
+
+          <p class='field required half'>
+            <label class='label required' for='rut'>Rut</label>
+            <input class='text-input' maxlength="10" placeholder="12345678-9" id='rut' name='rut' required type='text' >
+          </p>
+
+          <p class='field required half'>
+            <label class='label required' for='phone'>Telefono</label>
+            <input class='text-input' maxlength="9" id='phone' name='phone' required type='number' >
+          </p>
+
+          <p class='field required half'>
+            <label class='label required' for='date'>Fecha</label>
+            <input class='text-input' maxlength="9" id='date' name='date' required type='datetime-local' >
+          </p>
+
+          <p class='field required half'>
+            <label class='label' for='direction'>Direccion</label>
+            <textarea class='textarea' cols='50' id='direction' name='direction' required rows='1'></textarea>
+          </p>
+
+          <p class='field required half'>
+            <label class='label required' for='type'>Tipo de incendio</label>
+            <select name="type" id="type">
+                <option vale="Urbano">Urbano</option>
+                <option vale="Industrial">Industrial</option>
+                <option vale="Total">Total </option>
+            </select>
+          </p>
+
+          <p class='field required half'>
+            <label class='label required' for='class'>Clase de incendio</label>
+            <select name="class" id="class">
+                <option vale="A">Tipo A</option>
+                <option vale="B">Tipo B</option>
+                <option vale="C">Tipo C</option>
+                <option vale="D">Tipo D</option>
+                <option vale="E">Tipo E</option>
+                <option vale="F">Tipo F</option>
+            </select>
+          </p>
+
+          <p class='field required half'>
+            <label class='label required' for='size'>Tamaño del incendio</label>
+            <select name="size" id="size">
+                <option vale="Cotano">Cotano</option>
+                <option vale="Parcia">Incendio Parcial</option>
+                <option vale="Total">Incedio Total</option>
+            </select>
+          </p>
+
+          <p class='field'>
+            <label class='label' for='cause'>Causa</label>
+            <textarea class='textarea' cols='50' placeholder="Clausala Opcional" id='cause' name='cause' required rows='4'></textarea>
+          </p>
+
+          <p class='field'>
+            <input class='button' type='submit' value='Enviar Datos'>
+          </p>
+
+        </form>
+      </div>
+</body>
+</html>
