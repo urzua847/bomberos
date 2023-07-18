@@ -1,0 +1,17 @@
+###
+POST http://localhost:9000/api/evaluations HTTP/1.1
+Content-Type: application/json 
+
+{  
+    "criterio1": "Silbato de emergencia",
+    "critetio2": "Proveedor de suministros médicos XYZ",
+    "criterio3": "Silbato de emergencia para situaciones de emergencia. Fabricado en plástico resistente y duradero. Incluye cordón para colgar alrededor del cuello.",
+    "criterio4": "Proveedor de suministros médicos XYZ",
+    "criterio5": "Proveedor de suministros médicos XYZ",
+    "criterio6": "2021-01-01",
+    "criterio7": "sin vencimiento"
+}
+
+//mostrar lo que sea que se haya creado
+###
+GET http://localhost:9000/api/evaluations HTTP/1.1

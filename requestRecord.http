@@ -5,10 +5,10 @@ Content-Type: application/json
 
 {  
     "name": "andres",
-    "lastname": "azuje",
+    "lastname": "azuaje",
     "rut": 12345678,
     "phone": 12345678,
-    "ubication": "colocolo",
+    "ubication": "Chao",
     "date": "2021/01/20",
     "TDI": "Tipo urbano",
     "cause": "desconocido",

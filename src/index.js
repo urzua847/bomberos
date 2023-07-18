@@ -10,7 +10,7 @@ const userRoutes = require("./routes/user");
 const recordRoutes = require("./routes/record");
 const notificationRoutes = require("./routes/notification");
 const inventoryRoutes = require("./routes/inventory");
-
+const evaluationRoutes = require("./routes/evaluation");
 
 //importar app y port
 const app = express();
@@ -23,7 +23,7 @@ app.use("/api", userRoutes);
 app.use("/api", recordRoutes);
 app.use("/api", notificationRoutes);
 app.use("/api", inventoryRoutes);
-
+app.use("/api", evaluationRoutes);
 
 //Mongodb connection
 mongoose

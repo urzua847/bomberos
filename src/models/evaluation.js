@@ -3,6 +3,7 @@
 const mongoose = require("mongoose");
 
 const evaluationSchema = mongoose.Schema({
+
     criterio1: {
         type: String,
         required: true
@@ -30,5 +31,7 @@ const evaluationSchema = mongoose.Schema({
     criterio7: {
         type: String,
         required: true
-        },
+        }
 });
+//exporta modelo
+mongoose.exports = mongoose.model('evaluation', evaluationSchema);
