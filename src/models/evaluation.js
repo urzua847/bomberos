@@ -34,4 +34,4 @@ const evaluationSchema = mongoose.Schema({
         }
 });
 //exporta modelo
-mongoose.exports = mongoose.model('evaluation', evaluationSchema);
+module.exports = mongoose.model('evaluation', evaluationSchema);
