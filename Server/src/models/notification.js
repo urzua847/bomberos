@@ -3,9 +3,10 @@
 const mongoose = require("mongoose");
 
 const notificationSchema = mongoose.Schema({
-    tipe: {   //(por ejemplo, alerta de incendio, actualización de estado) 
-    type: String,
-    required: true,
+
+  tipe: {   //(por ejemplo, alerta de incendio, actualización de estado) 
+  type: String,
+  required: true,
   },
   date: {
     type: String,
