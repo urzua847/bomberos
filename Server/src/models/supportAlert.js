@@ -2,7 +2,7 @@
 // Path: src\models\user.js
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema({
+const supportAlertSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -22,6 +22,6 @@ const userSchema = mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('supportAlert', supportAlertSchema);
 
 

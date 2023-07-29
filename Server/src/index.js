@@ -11,6 +11,8 @@ const recordRoutes = require("./routes/record");
 const notificationRoutes = require("./routes/notification");
 const inventoryRoutes = require("./routes/inventory");
 const evaluationRoutes = require("./routes/evaluation");
+const analysisRoutes = require("./routes/analysis");
+const supportAlertRoutes = require("./routes/supportAlert");
 
 //importar app y port
 const app = express();
@@ -24,6 +26,9 @@ app.use("/api", recordRoutes);
 app.use("/api", notificationRoutes);
 app.use("/api", inventoryRoutes);
 app.use("/api", evaluationRoutes);
+app.use("/api", analysisRoutes);
+app.use("/api", supportAlertRoutes);
+
 
 //Mongodb connection
 mongoose
