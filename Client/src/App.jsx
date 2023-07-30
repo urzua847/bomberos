@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import EvaluationPage from "./pages/evaluation/evaluationPage.jsx";
+
+import RecordPage from "./pages/record/RecordPage";
+
 function App(){
   return (
     <BrowserRouter>
@@ -8,7 +11,7 @@ function App(){
         <Route path='/evaluation' element={<EvaluationPage/>} />
         <Route path='/inventory' element={<h1> Inventario </h1>} />
         <Route path='/notification' element={<h1> Notificacion </h1>} />
-        <Route path='/record' element={<h1> Registro </h1>} />
+        <Route path='/record' element={<RecordPage />} />
         <Route path='/user' element={<h1> Usuario </h1>} />
         <Route path='/analysis' element={<h1> Analisis </h1>} />
         <Route path='/support-alert' element={<h1> Solicitud de equipo extra </h1>} />
