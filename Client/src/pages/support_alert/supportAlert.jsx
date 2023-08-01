@@ -1,12 +1,12 @@
 import {useForm} from "react-hook-form";
 import { supportAlertRequest } from "../../api/auth";
 
-function supportAlertPage() {
+function SupportAlertPage() {
   
   const {register, handleSubmit} = useForm();
 
   const onSubmit = handleSubmit(async (values) =>{
-    const res = await supportAlertRequest(values)
+    const res = await SupportAlertRequest(values)
     console.log(res)
   });
 
@@ -65,5 +65,5 @@ function supportAlertPage() {
   )
 }
 
-export default supportAlertPage
+export default SupportAlertPage
 
