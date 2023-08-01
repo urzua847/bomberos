@@ -19,6 +19,10 @@ function RecordForm() {
         setValue('name', record.name);
         setValue('lastname', record.lastname);
         setValue('phone', record.phone);
+        setValue('ubication', record.ubication);
+        setValue('cause', record.cause);
+        setValue('description', record.description);
+        setValue('date', record.date);
       }
     }
     loadRecord();
