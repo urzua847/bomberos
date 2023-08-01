@@ -9,11 +9,8 @@ const notificationSchema = mongoose.Schema({
   required: true,
   },
   date: {
-    type: String,
-    required: true
-  },
-  hour: {
-    type: String,
+    type: Date,
+    default: Date.now() - 4 * 60 * 60 * 1000,
     required: true
   },
   ubication: {  //(por ejemplo, coordenadas, dirección)
@@ -22,7 +19,7 @@ const notificationSchema = mongoose.Schema({
   },
   gravity_level: {  //(por ejemplo, bajo, medio, alto)
     type: String,
-    required: true
+    required: true,
   },
   actual_state: {    //(por ejemplo, controlado, en progreso)
     type: String,
@@ -30,7 +27,7 @@ const notificationSchema = mongoose.Schema({
   },
   additional_information: {  //(por ejemplo, si se requiere apoyo aéreo, si se requiere apoyo terrestre)
     type: String,
-    required: true
+    required: false
   }
 });
 

@@ -20,12 +20,13 @@ const supportAlertRoutes = require("./routes/supportAlert");
 const app = express();
 const port = process.env.PORT || 9000;
 
-//middleware (se usa para consultas y guardar informacion en la BD antes de pasar a las cpnsultas)
+//middleware (se usa para consultas y guardar informacion en la BD antes de pasar a las consultas)
 app.use(express.json());
 //middleware Cors
 app.use(cors({
     origin: 'http://localhost:5173',
 }));
+
 //middleware de montaje de rutas (se utilizan para definir las rutas)
 app.use("/api", userRoutes);
 app.use("/api", recordRoutes);
