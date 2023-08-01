@@ -22,6 +22,7 @@ function EvaluationPage() {
               className="relative h-[72px] w-[1440px] bg-[#313236] drop-shadow-lg"
             />
             <div className="absolute left-[812px] top-[23px] gap-8">
+  
               <div className="flex items-center gap-8">
                 <div>
                   <div
@@ -88,11 +89,11 @@ function EvaluationPage() {
             </p>
             <div className="relative left-0.5 top-2.5 h-12 w-[53px] overflow-clip">
               <div
-                className="bg-image-1bg-0x absolute inset-0 bg-cover bg-center opacity-[0.45]"
+               className="bg-image-1bg-0x absolute inset-0 bg-cover bg-center opacity-[0.45]"
               />
             </div>
           </div>
-        </div>
+</div>
   
 
 
