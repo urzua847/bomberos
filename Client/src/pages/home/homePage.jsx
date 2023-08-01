@@ -56,7 +56,7 @@ function homePage() {
               <div
                 className="font-inter inline-flex items-center gap-2 text-left font-[500] text-[#FFA570]"
               >
-                <Link to="/record">
+                <Link to="/recordPage">
                   <button className="text-xs leading-4">Acceder</button>
                 </Link>
                 <div className="h-4 w-4">
@@ -279,7 +279,7 @@ function homePage() {
                   <div
                     className="font-inter gap-2.5 text-left font-[500] text-[#F3F3FB]"
                   >
-                    <Link to="/record">
+                    <Link to="/recordPage">
                   <button className="text-sm leading-5">Registro</button>
                     </Link>
                   </div>

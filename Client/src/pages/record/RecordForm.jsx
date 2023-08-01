@@ -1,16 +1,36 @@
 import {useForm} from "react-hook-form";
 //import { recordRequest } from "../../api/auth";
 import { UseRecord } from "../../context/RecordContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 
 function RecordForm() {
   
-  const {register, handleSubmit} = useForm();
-  const {createRecord} = UseRecord();
+  const {register, handleSubmit, setValue} = useForm();
+  const {createRecord, getOneRecord, updateRecord} = UseRecord();
   const navigate = useNavigate();
+  const params = useParams();
+
+  useEffect(() => {
+    async function loadRecord(){
+      if(params.id){ 
+        const record = await getOneRecord(params.id)
+        console.log(record)
+        setValue('name', record.name);
+        setValue('lastname', record.lastname);
+        setValue('phone', record.phone);
+      }
+    }
+    loadRecord();
+  },[params.id, getOneRecord, setValue]);
 
   const onSubmit = handleSubmit((data) =>{
-    createRecord(data);
+    if(params.id){
+      updateRecord(params.id, data);
+    }else{
+      createRecord(data);
+    }
     navigate('/recordPage');
   });
   /*const onSubmit = handleSubmit(async (values) =>{
