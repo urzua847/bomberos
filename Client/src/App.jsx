@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import EvaluationPage from "./pages/evaluation/evaluationPage.jsx";
-
 import RecordPage from "./pages/record/RecordPage";
 
 function App(){

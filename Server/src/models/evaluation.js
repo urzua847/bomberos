@@ -4,28 +4,28 @@ const mongoose = require("mongoose");
 
 const evaluationSchema = mongoose.Schema({
 
-    criterio1: {
+    Tipo_de_Incendio: {
         type: String,
         required: true
         },
-    criterio2: {
+    Clase_de_incendio: {
         type: String,
         required: true
         },
-    criterio3: {
+    Tamaño: {
         type: String,
         required: true
         },
-    criterio4: {
-        type: String,
+    Brigadistas_a_desplegar: {
+        type: Number,
         required: true
         },
-    criterio5: {
-        type: String,
+    Camiones_a_desplegar: {
+        type: Number,
         required: true
         },
-    criterio6: {
-        type: String,
+    Colaboracion_otras_brigadas: {
+        type: Boolean,
         required: true
         },
     criterio7: {
