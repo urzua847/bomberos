@@ -13,7 +13,7 @@ function SupportAlertPage() {
   return (
     <div className="flex h-[calc(100vh-100px)] items-center justify-center "> <div/> 
       <div className="bg-zinc-800 max-w-md p-10 rounded-md">
-        <h1 className="text-2xl text-center text-white font-bold mt-10">Registro</h1>
+        <h1 className="text-2xl text-center text-white font-bold mt-10">Solicitud de equipo</h1>
         <form onSubmit={onSubmit}>
           
           <p>

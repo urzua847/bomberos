@@ -26,8 +26,8 @@ function NotificationCard({ notification }) {
 NotificationCard.propTypes = {
     notification: PropTypes.shape({
       tipe: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      ubication: PropTypes.number.isRequired,
+      date: PropTypes.date.isRequired,
+      ubication: PropTypes.string.isRequired,
       _id: PropTypes.string.isRequired,
     }).isRequired,
 };
