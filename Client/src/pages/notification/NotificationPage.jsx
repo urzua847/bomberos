@@ -54,8 +54,11 @@ function NotificationPage() {
               className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2" 
             />
             
-            <button type='submit'> 
-              Send
+            <button
+                className="bg-transparent hover:bg-gray-700 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+                type="submit"
+              >
+              Generar
             </button>
           </form>
         </div>

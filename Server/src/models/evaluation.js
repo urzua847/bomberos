@@ -27,10 +27,6 @@ const evaluationSchema = mongoose.Schema({
     Colaboracion_otras_brigadas: {
         type: Boolean,
         required: true
-        },
-    criterio7: {
-        type: String,
-        required: true
         }
 });
 //exporta modelo
