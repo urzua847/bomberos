@@ -1,9 +1,8 @@
 import {useForm} from "react-hook-form";
-//import { recordRequest } from "../../api/auth";
 import { UseRecord } from "../../context/RecordContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-
+import {Link} from 'react-router-dom'
 
 function RecordForm() {
   
@@ -33,24 +32,21 @@ function RecordForm() {
     }
     navigate('/recordPage');
   });
-  /*const onSubmit = handleSubmit(async (values) =>{
-    const res = await recordRequest(values)
-    console.log(res)
-  });*/
+
 
   return (
-    <div className="flex h-[calc(100vh-100px)] items-center justify-center "> <div/> 
+    <div className="flex h-[calc(100vh-100px)] items-center justify-center mt-10"> <div/> 
       <div className="bg-zinc-800 max-w-md p-10 rounded-md">
-        <h1 className="text-2xl text-center text-white font-bold mt-10">Registro</h1>
+        <h1 className="text-2xl text-center text-white font-bold mt-10">Ingresar Registro</h1>
         <form onSubmit={onSubmit}>
           
           <p>
           <label>Nombre</label>
           <input type="text" {... register('name', {required: true})} 
-            placeholder="Name" className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-1 " 
+            placeholder="Ingrese nombre" className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-1 " 
           />
           <input type="text" {... register('lastname', {required: true})} 
-            placeholder="Lastname" className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-1" 
+            placeholder="Ingrese apellido" className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-1" 
           />
           </p>
           <br/>
@@ -81,9 +77,18 @@ function RecordForm() {
             className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2 resize-none" 
           />
           
-          <button type='submit'> 
-            Send
-          </button>
+          <div className="text-center text-white">
+            <button type='submit' 
+            className="bg-transparent hover:bg-gray-700 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded mb-2"> 
+            Enviar
+            </button>
+            <br/>
+            <Link to='/recordPage'>
+              <button type='submit' 
+              className="bg-transparent hover:bg-gray-700 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
+                Regresar
+              </button></Link>
+          </div>
         </form>
       </div>
     </div>

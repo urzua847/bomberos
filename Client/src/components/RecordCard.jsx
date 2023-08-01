@@ -11,10 +11,15 @@ function RecordCard({ record }) {
         <header className='flex justify-between'>
             <h1 className='text-2xl font-bold'>{record.name}</h1>
                 <div className='flex gap-x-2 items-center'>
-                    <button onClick={()=>{
+                    <button 
+                     className="bg-transparent hover:bg-red-700 text-white font-semibold hover:text-white py-1 px-2 border border-white hover:border-transparent rounded"
+                    onClick={()=>{
                         deleteRecord(record._id);
-                    }}>delete</button>
-                    <Link to={`/records/${record._id}`}>edit</Link>
+                    }}>Borrar</button>
+                    <Link to={`/records/${record._id}`}>
+                        <button className="bg-transparent hover:bg-blue-700 text-white font-semibold hover:text-white py-1 px-2 border border-white hover:border-transparent rounded">
+                        Editar
+                        </button></Link>
                 </div>  
         </header>
         <p className='text-slate-300'>{record.lastname}</p>

@@ -13,18 +13,20 @@ import { RecordProvider } from "./context/RecordContext.jsx";
 function App(){
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomePage/>} />
-        <Route path='/evaluation' element={<EvaluationPage/>} />
-        <Route path='/inventory' element={<InventoryPage />} />
-        <Route path='/notification' element={<NotificationPage />} />
-        <Route path='/records' element={<RecordProvider><RecordForm /></RecordProvider>} />
-        <Route path='/recordPage' element={<RecordProvider><RecordPage /></RecordProvider>} />
-        <Route path='/records/:id' element={<RecordProvider><RecordForm /></RecordProvider>} />
-        <Route path='/user' element={<UserPage />} />
-        <Route path='/analysis' element={<h1> Analisis </h1>} />
-        <Route path='/supportAlert' element={<SupportAlertPage />} />
-      </Routes>
+      <main className="container mx-auto px-10">
+        <Routes>
+          <Route path='/' element={<HomePage/>} />
+          <Route path='/evaluation' element={<EvaluationPage/>} />
+          <Route path='/inventory' element={<InventoryPage />} />
+          <Route path='/notification' element={<NotificationPage />} />
+          <Route path='/records' element={<RecordProvider><RecordForm /></RecordProvider>} />
+          <Route path='/recordPage' element={<RecordProvider><RecordPage /></RecordProvider>} />
+          <Route path='/records/:id' element={<RecordProvider><RecordForm /></RecordProvider>} />
+          <Route path='/user' element={<UserPage />} />
+          <Route path='/analysis' element={<h1> Analisis </h1>} />
+          <Route path='/supportAlert' element={<SupportAlertPage />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }
