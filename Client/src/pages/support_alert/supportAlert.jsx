@@ -6,7 +6,7 @@ function SupportAlertPage() {
   const {register, handleSubmit} = useForm();
 
   const onSubmit = handleSubmit(async (values) =>{
-    const res = await SupportAlertRequest(values)
+    const res = await supportAlertRequest(values)
     console.log(res)
   });
 
