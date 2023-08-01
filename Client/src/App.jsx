@@ -4,14 +4,14 @@ import EvaluationPage from "./pages/evaluation/evaluationPage.jsx";
 import RecordPage from "./pages/record/RecordPage";
 import NotificationPage from "./pages/notification/NotificationPage";
 import InventoryPage from "./pages/inventory/inventory.jsx";
-
+import HomePage from "./pages/home/homePage";
 
 
 function App(){
   return (
     <BrowserRouter>
       <Routes>  
-        <Route path='/' element={<h1>home page </h1>} />
+        <Route path='/' element={<HomePage/>} />
         <Route path='/evaluation' element={<EvaluationPage/>} />
         <Route path='/inventory' element={<InventoryPage />} />
         <Route path='/notification' element={<NotificationPage />} />
@@ -22,9 +22,6 @@ function App(){
       </Routes>
     </BrowserRouter>  
   );
-
-
-  
 }     
 
 export default App;
