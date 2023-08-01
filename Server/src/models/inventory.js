@@ -20,7 +20,7 @@ const inventorySchema = mongoose.Schema({
     required: true
   },
   expiration_date: {  
-    type: String,
+    type: Date,
     required: false
   },
 });
