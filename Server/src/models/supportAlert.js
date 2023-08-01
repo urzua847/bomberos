@@ -3,20 +3,24 @@
 const mongoose = require("mongoose");
 
 const supportAlertSchema = mongoose.Schema({
-  name: {
+  assignedResources: {
     type: String,
     required: true,
   },
-  phone: {
-    type: Number,
+  ActionsDates: {
+    type: String,
     required: true
   },
-  email: {
+  ActionsDescripcion: {
+    type: Number,
+    requeried: true
+  },
+  RecordOfAdditionalResourcesRequested: {
     type: String,
     required: true
 
   },
-  role: {
+  NotesAndObservations: {
     type: String,
     required: true
   }
