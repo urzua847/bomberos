@@ -1,6 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from 'prop-types';
-import {createEvaluationRequest, getEvaluationRequest, deleteEvaluationRequest} from '../api/evaluation'
+import {
+    createEvaluationRequest, 
+    getEvaluationRequest, 
+    deleteEvaluationRequest, 
+    getOneEvaluationRequest, 
+    updateEvaluationRequest
+} from '../api/evaluation'
 
 const EvaluationContext = createContext();
 
@@ -16,19 +22,19 @@ export const UseEvaluation = () => {
 
 export function EvaluationProvider({children}){
 
-    const [Evaluations, setEvaluations] = useState([]);
+    const [evaluations, setEvaluations] = useState([]);
 
     const getEvaluations = async () => {
         try {
-            const res = await getEvaluationRequest();
+            const res = await  getEvaluationRequest();
             setEvaluations(res.data);
         } catch (error) {
             console.log(error);
         }   
     }
 
-    const createEvaluation = async (Evaluation) => {
-        const res = await createEvaluationRequest(Evaluation);
+    const createEvaluation = async (evaluation) => {
+        const res = await createEvaluationRequest(evaluation);
         console.log(res);
     }
 
@@ -36,14 +42,40 @@ export function EvaluationProvider({children}){
         try {
             const res = await deleteEvaluationRequest(id);
             console.log(res);
-            if(res.status === 204) setEvaluations(Evaluations.filter((Evaluation) => Evaluation._id !== id));
+            if(res.status === 204) setEvaluations(evaluations.filter((evaluation) => evaluation._id !== id));
         }catch (error) {
             console.log(error);
         }    
     };
 
+    const getOneEvaluation = async (id) => {
+        try{
+            const res = await getOneEvaluationRequest(id);
+            return res.data;
+        }catch (error) {
+            console.log(error);
+        }
+    }
+
+    const updateEvaluation = async (id, evaluation) => {
+        try{
+            await updateEvaluationRequest(id, evaluation);
+        }catch (error) {
+            console.log(error);
+        }   
+    }
+
     return (
-        <EvaluationContext.Provider value={{Evaluations, createEvaluation, getEvaluations,deleteEvaluation}}>
+        <EvaluationContext.Provider 
+        value={{
+            evaluations, 
+            createEvaluation, 
+            getEvaluations,
+            deleteEvaluation, 
+            getOneEvaluation,
+            updateEvaluation
+        }}
+        >
             {children}
         </EvaluationContext.Provider>
     )

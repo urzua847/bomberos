@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import {UseRecord} from '../context/RecordContext'
+import {Link} from 'react-router-dom'
 
 function RecordCard({ record }) {
 
@@ -13,7 +14,7 @@ function RecordCard({ record }) {
                     <button onClick={()=>{
                         deleteRecord(record._id);
                     }}>delete</button>
-                    <button>edit</button>
+                    <Link to={`/records/${record._id}`}>edit</Link>
                 </div>  
         </header>
         <p className='text-slate-300'>{record.lastname}</p>

@@ -1,17 +1,36 @@
 import {useForm} from "react-hook-form";
 //import { recordRequest } from "../../api/auth";
 import { UseEvaluation } from "../../context/EvaluationContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'; 
+import { useEffect } from "react";
 
 function EvaluationForm() {
   
-  const {register, handleSubmit} = useForm();
-  const {createEvaluation} = UseEvaluation();
+  const {register, handleSubmit, setValue} = useForm();
+  const {createEvaluation, getOneEvaluation, updateEvaluation} = UseEvaluation();
   const navigate = useNavigate();
+  const params = useParams();
+
+  useEffect(() => {
+    async function loadEvaluation(){
+      if(params.id){ 
+        const evaluation = await getOneEvaluation(params.id)
+        console.log(evaluation)
+        setValue('Tipo_de_Incendio', evaluation.Tipo_de_Incendio);
+        setValue('Clase_de_incendio',evaluation.Clase_de_incendio);
+        setValue('Tamaño', evaluation.Tamaño);
+      }
+    }
+    loadEvaluation();
+  },[params.id, getOneEvaluation, setValue]);
 
   const onSubmit = handleSubmit((data) =>{
-    createEvaluation(data);
+    if(params.id){
+      updateEvaluation(params.id, data);
+    }else{
+      createEvaluation(data);
+    }
     navigate('/evaluationPage');
   });
 

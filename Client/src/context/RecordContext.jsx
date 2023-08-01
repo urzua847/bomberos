@@ -1,6 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from 'prop-types';
-import {createRecordRequest, getRecordRequest, deleteRecordRequest} from '../api/record'
+import {
+    createRecordRequest, 
+    getRecordRequest, 
+    deleteRecordRequest, 
+    getOneRecordRequest, 
+    updateRecordRequest
+} from '../api/record'
 
 const RecordContext = createContext();
 
@@ -42,8 +48,34 @@ export function RecordProvider({children}){
         }    
     };
 
+    const getOneRecord = async (id) => {
+        try{
+            const res = await getOneRecordRequest(id);
+            return res.data;
+        }catch (error) {
+            console.log(error);
+        }
+    }
+
+    const updateRecord = async (id, record) => {
+        try{
+            await updateRecordRequest(id, record);
+        }catch (error) {
+            console.log(error);
+        }   
+    }
+
     return (
-        <RecordContext.Provider value={{records, createRecord, getRecords,deleteRecord}}>
+        <RecordContext.Provider 
+        value={{
+            records, 
+            createRecord, 
+            getRecords,
+            deleteRecord, 
+            getOneRecord,
+            updateRecord
+        }}
+        >
             {children}
         </RecordContext.Provider>
     )

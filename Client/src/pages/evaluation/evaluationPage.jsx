@@ -4,18 +4,18 @@ import EvaluationCard from '../../components/EvaluationCard'
 
 function EvaluationPage() {
   
-    const { getEvaluations, Evaluations } = UseEvaluation();
+    const { getEvaluations, evaluations } = UseEvaluation();
 
     useEffect(() => {
         getEvaluations();
     }, [getEvaluations]);
 
-    if(Evaluations.length === 0) return (<h1>No hay registros</h1>);
+    if(evaluations.length === 0) return (<h1>No hay registros</h1>);
 
     return <div className='grid grid-cols-3 gap-2'>
         {
-            Evaluations.map((evaluation) => (
-                <EvaluationCard Evaluation={evaluation} key={evaluation._id} />
+            evaluations.map((evaluation) => (
+                <EvaluationCard evaluation={evaluation} key={evaluation._id} />
             ))
         };
     </div>
