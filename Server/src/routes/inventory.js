@@ -29,9 +29,9 @@ router.get("/inventory/:id", (req, res) => {
 // update a inventory
 router.put("/inventory/:id", (req, res) => {
   const { id } = req.params;
-  const { product_name, product_code, product_description, quantity_available, acquisition_date_supplier } = req.body;
+  const { equipment_name, equipment_code, equipment_description, quantity_available, expiration_date } = req.body;
   inventorySchema
-    .updateOne({ _id: id }, { $set: { product_name, product_code, product_description, quantity_available, acquisition_date_supplier } })
+    .updateOne({ _id: id }, { $set: { equipment_name, equipment_code, equipment_description, quantity_available, expiration_date } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });

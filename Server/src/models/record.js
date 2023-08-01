@@ -11,10 +11,6 @@ const recordSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  rut: {
-    type: Number,
-    required: true
-  },
   phone: {
     type: Number,
     required: true
@@ -24,22 +20,15 @@ const recordSchema = mongoose.Schema({
     required: true
   },
   date: {
-    type: String,
-    required: true
-  },
-  TDI: {
-    type: String,
-    required: true
-  },
-  CDI: {
-    type: String,
-    required: true
-  },
-  size: {
-    type: String,
+    type: Date,
+    default: Date.now() - 4 * 60 * 60 * 1000,
     required: true
   },
   cause: {
+    type: String,
+    required: false
+  },
+  description: {
     type: String,
     required: false
   }
